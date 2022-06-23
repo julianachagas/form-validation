@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travel Lovers | Create Account</title>
+    <script
+      src="https://kit.fontawesome.com/8e7b84f57c.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>    
+    <header class="container">
+      <a href="index.html"><img src="assets/logo.svg" class="logo" alt="Travel Lovers Homepage"></a>
+    </header>
+    <main class="container">
+      <div class="content">
+        <h1 class="headline">Time to travel the world</h1>
+        <p class="subheadline">Join our community of travel lovers and start planning your next adventure</p>
+        <button class="btn" id="open-modal">Create Account</button>
+      </div>
+      <div class="main-image"></div>
+      <div class="modal-wrapper">
+        <div class="modal">
+          <div class="modal-header">
+            <p>Create Account</p>            
+            <button class="close-modal"><i class="fa fa-close"></i></button>
+          </div>
+          <form id="signup-form" action="https://formspree.io/f/xayvzjgv"
+          method="POST">
+            <div class="form-group">
+              <label for="username">Username</label>
+              <div class="form-control">
+                <i class="fas fa-user input-icon"></i>
+                <input type="text" id="username" name="username" class="initial" placeholder="lukeskywalker">
+                <i class="fas fa-exclamation-circle failure-icon"></i>
+                <i class="far fa-check-circle success-icon"></i>
+                <div class="feedback">Username must be between 5 - 15 characters long and contain only letters and numbers</div>
+              </div>                          
+            </div>     
+            <div class="form-group">
+              <label for="email">Email</label>
+              <div class="form-control">
+                <i class="far fa-envelope input-icon"></i>
+                <input type="email" id="email" name="email" class="initial" placeholder="skywalker@mail.com">
+                <i class="fas fa-exclamation-circle failure-icon"></i>
+                <i class="far fa-check-circle success-icon"></i>
+                <div class="feedback">Email must be a valid address, e.g. me@mydomain.com</div>
+              </div>
+            </div>
+            <div class="form-group password">
+              <label for="password">Password</label>
+              <div class="form-control">
+                <i class="fas fa-lock input-icon"></i>
+                <input type="password" id="password" name="password" class="initial" placeholder="password">
+                <i class="fas fa-exclamation-circle failure-icon"></i>
+                <i class="far fa-check-circle success-icon"></i>
+                <div class="feedback">Password must only contain letters, numbers, @, _ and -, and be between 8 - 20 characters long</div>
+              </div>
+            </div>      
+            <button class="btn submit" type="submit">Create Account</button>
+          </form>
+        </div>
+      </div>
+    </main>
+    <footer class="container">
+      <p>Made with &#9825 by <a href="https://github.com/julianachagas" target="_blank">Juliana Chagas</a></p>
+      <a href="https://storyset.com/travel" target="_blank">Travel illustrations by Storyset</a>
+    </footer>    
+    <script src="script.js"></script>
+  </body>
+</html>

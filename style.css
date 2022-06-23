@@ -1,0 +1,307 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #217f91;
+  --secondary-color: #e22b12;
+  --focus-background: #1e2c2e;
+  --text: #444546;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.6rem;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: var(--text);
+}
+
+a {
+  text-decoration: none;
+}
+
+.logo {
+  display: block;
+}
+
+input,
+button {
+  font-family: inherit;
+}
+
+header {
+  padding-block: 3rem;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.content {
+  width: 50%;
+}
+
+.main-image {
+  height: 80vh;
+  background-image: url('assets/main-image.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 50%;
+  background-size: contain;
+}
+
+.container {
+  width: min(112rem, 100%);
+  padding-inline: 2.4rem;
+  margin-inline: auto;
+}
+
+.headline {
+  font-size: 4.2rem;
+  line-height: 1.3;
+  color: var(--secondary-color);
+  font-weight: 600;
+}
+
+.subheadline {
+  font-size: 2rem;
+  line-height: 1.5;
+  width: 80%;
+  margin-bottom: 3rem;
+}
+
+.btn {
+  border: none;
+  padding: 1.5rem 0.5rem;
+  border-radius: 10px;
+  cursor: pointer;
+  text-transform: uppercase;
+  background: var(--primary-color);
+  color: #fff;
+  transition: all 0.3s ease-in-out;
+  font-size: 1.4rem;
+  font-weight: 400;
+  letter-spacing: 0.03rem;
+}
+
+#open-modal {
+  padding: 1.5rem 3rem;
+}
+
+.btn:hover {
+  transform: translatey(3px);
+  background-color: var(--focus-background);
+}
+
+footer {
+  text-align: center;
+  font-size: 1.4rem;
+  padding: 1rem;
+}
+
+footer a {
+  color: var(--text);
+}
+
+footer a:hover {
+  text-decoration: underline;
+  color: var(--primary-color);
+}
+
+/* modal */
+
+.modal-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(3px);
+  display: none;
+}
+
+.modal-wrapper.show {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  max-height: 100%;
+  border-radius: 10px;
+  padding: 3.2rem;
+  background: #fff;
+  position: relative;
+  width: min(500px, 90%);
+  overflow-y: auto;
+}
+
+.modal-header {
+  font-size: 2.4rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.close-modal {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.close-modal i {
+  color: rgb(107, 107, 107);
+  font-size: 2.4rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.form-group input {
+  padding: 0.5rem 3.5rem 0.5rem 3rem;
+  border: none;
+  font-size: 1.6rem;
+  width: 100%;
+  border-bottom: 2px solid;
+  height: 4rem;
+  border-radius: 0;
+}
+
+.form-group input.invalid {
+  border-color: red;
+}
+
+.form-group input.valid {
+  border-color: green;
+}
+
+.form-group input:focus {
+  outline: none;
+}
+
+.form-group input.initial {
+  border-color: #eeeeee;
+}
+
+.form-group input.initial:focus {
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.form-control {
+  position: relative;
+}
+
+.form-control i {
+  position: absolute;
+}
+
+.success-icon,
+.failure-icon {
+  top: 0;
+  right: 0;
+  padding: 1rem;
+  opacity: 0;
+  transition: none;
+  font-size: 1.8rem;
+}
+
+.success-icon.show,
+.failure-icon.show {
+  opacity: 1;
+}
+
+.input-icon {
+  padding: 1rem 0;
+  font-size: 1.6rem;
+}
+
+.failure-icon {
+  color: red;
+}
+
+.success-icon {
+  color: green;
+}
+
+.feedback {
+  margin-top: 1rem;
+  color: red;
+  line-height: 1.3;
+  font-size: 1.4rem;
+  display: none;
+}
+
+input.invalid ~ .feedback {
+  display: block;
+}
+
+.btn.submit {
+  margin-top: 1rem;
+}
+
+@media (max-width: 800px) {
+  header {
+    padding-block: 1rem;
+  }
+
+  .container {
+    width: min(60rem, 100%);
+  }
+
+  .logo {
+    margin: 0 auto;
+  }
+
+  main {
+    flex-direction: column;
+    gap: 4rem;
+  }
+
+  .content {
+    width: 100%;
+    text-align: center;
+  }
+
+  .main-image {
+    width: 100%;
+    height: 40vh;
+  }
+
+  .headline {
+    font-size: 3.2rem;
+  }
+
+  .subheadline {
+    font-size: 1.8rem;
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 350px) {
+  .modal-header {
+    font-size: 2rem;
+  }
+}
