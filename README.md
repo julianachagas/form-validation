@@ -8,6 +8,8 @@ The project contains a registration form the user can fill out to create an acco
 - email: it must be a valid address, e.g. me@mydomain.com or me@domain.co.uk
 - password: it must contain letters, numbers, @, _ or -, and be between 8 - 20 characters long
 
+The validation occurs as the user is typing into the input (a feedback message is shown to help the user) and also when the user submits the form.
+
 Regular Expressions:
 
 ```javascript
