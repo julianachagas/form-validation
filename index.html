@@ -25,14 +25,14 @@
       <div class="content">
         <h1 class="headline">Time to travel the world</h1>
         <p class="subheadline">Join our community of travel lovers and start planning your next adventure</p>
-        <button class="btn" id="open-modal">Create Account</button>
+        <button class="btn" id="open-modal" aria-expanded="false">Create Account</button>
       </div>
       <div class="main-image"></div>
       <div class="modal-wrapper">
         <div class="modal">
           <div class="modal-header">
             <p>Create Account</p>            
-            <button class="close-modal"><i class="fa fa-close"></i></button>
+            <button class="close-modal" aria-label="Close" aria-expanded="true"><i class="fa fa-close"></i></button>
           </div>
           <form id="signup-form" action="https://formspree.io/f/xayvzjgv"
           method="POST">
@@ -40,10 +40,10 @@
               <label for="username">Username</label>
               <div class="form-control">
                 <i class="fas fa-user input-icon"></i>
-                <input type="text" id="username" name="username" class="initial" placeholder="lukeskywalker">
+                <input type="text" id="username" name="username" class="initial" placeholder="lukeskywalker" aria-describedby="username-constraints">
                 <i class="fas fa-exclamation-circle failure-icon"></i>
                 <i class="far fa-check-circle success-icon"></i>
-                <div class="feedback">Username must be between 5 - 15 characters long and contain only letters and numbers</div>
+                <div class="feedback" id="username-constraints">Username must be between 5 - 15 characters long and contain only letters and numbers</div>
               </div>                          
             </div>     
             <div class="form-group">
@@ -60,10 +60,11 @@
               <label for="password">Password</label>
               <div class="form-control">
                 <i class="fas fa-lock input-icon"></i>
-                <input type="password" id="password" name="password" class="initial" placeholder="password">
+                <input type="password" id="password" name="password" class="initial" placeholder="password" aria-describedby="password-constraints">
+                <button type="button" class="toggle-password" role="switch" aria-pressed="false" aria-label="Show password"><i class="far fa-eye-slash"></i></button>
                 <i class="fas fa-exclamation-circle failure-icon"></i>
                 <i class="far fa-check-circle success-icon"></i>
-                <div class="feedback">Password must only contain letters, numbers, @, _ and -, and be between 8 - 20 characters long</div>
+                <div class="feedback" id="password-constraints">Password must only contain letters, numbers, @, _ and -, and be between 8 - 20 characters long</div>
               </div>
             </div>      
             <button class="btn submit" type="submit">Create Account</button>

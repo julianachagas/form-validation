@@ -61,6 +61,30 @@ inputs.forEach((input, index) => {
   });
 });
 
+//toggle password visibility
+const togglePasswordButton = document.querySelector('.toggle-password');
+form.password.addEventListener('input', () => {
+  togglePasswordButton.classList.add('show');
+});
+togglePasswordButton.addEventListener('click', togglePassword);
+
+function togglePassword() {
+  let iconClass;
+  if (form.password.type === 'password') {
+    form.password.type = 'text';
+    iconClass = 'fa-eye';
+    togglePasswordButton.setAttribute('aria-pressed', 'true');
+  } else {
+    form.password.type = 'password';
+    iconClass = 'fa-eye-slash';
+    togglePasswordButton.setAttribute('aria-pressed', 'false');
+  }
+  togglePasswordButton.firstElementChild.setAttribute(
+    'class',
+    `far ${iconClass}`
+  );
+}
+
 //submit event: check all the inputs when submitting the form, show feedback div of each input
 form.addEventListener('submit', e => {
   const validationResult = [];

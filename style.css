@@ -11,6 +11,10 @@
   --text: #444546;
 }
 
+::-ms-reveal {
+  display: none; /* remove the default password reveal button on microsoft edge */
+}
+
 html {
   font-size: 62.5%;
 }
@@ -155,7 +159,7 @@ footer a:hover {
   justify-content: space-between;
 }
 
-.close-modal {
+.close-modal, .toggle-password.show {
   background: transparent;
   border: none;
   cursor: pointer;
@@ -165,6 +169,8 @@ footer a:hover {
   color: rgb(107, 107, 107);
   font-size: 2.4rem;
 }
+
+/* form */
 
 form {
   display: flex;
@@ -186,6 +192,10 @@ form {
   border-bottom: 2px solid;
   height: 4rem;
   border-radius: 0;
+}
+
+.form-group input[type="password"] {
+  padding-right: 10rem;
 }
 
 .form-group input.invalid {
@@ -212,28 +222,46 @@ form {
   position: relative;
 }
 
-.form-control i {
+.form-control i, .toggle-password.show {
   position: absolute;
+}
+
+.toggle-password {   
+  display: none;
+}
+
+.toggle-password i {
+  font-size: 1.6rem;  
+}
+
+.toggle-password.show {
+  width: 3rem;
+  height: 4rem;
+  top: 0;
+  right: 4rem; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.success-icon, .failure-icon, .input-icon {
+  top: 2rem;
+  transform: translateY(-50%);
 }
 
 .success-icon,
 .failure-icon {
-  top: 0;
   right: 0;
-  padding: 1rem;
+  padding: 0 1rem;
   opacity: 0;
   transition: none;
   font-size: 1.8rem;
+  cursor: auto;
 }
 
 .success-icon.show,
 .failure-icon.show {
   opacity: 1;
-}
-
-.input-icon {
-  padding: 1rem 0;
-  font-size: 1.6rem;
 }
 
 .failure-icon {
