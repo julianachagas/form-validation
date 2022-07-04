@@ -43,7 +43,7 @@
                 <input type="text" id="username" name="username" class="initial" placeholder="lukeskywalker" aria-describedby="username-constraints">
                 <i class="fas fa-exclamation-circle failure-icon"></i>
                 <i class="far fa-check-circle success-icon"></i>
-                <div class="feedback" id="username-constraints">Username must be between 5 - 15 characters long and contain only letters and numbers</div>
+                <div class="feedback" id="username-constraints">Username must only contain letters and numbers, and must be between 5 - 15 characters long</div>
               </div>                          
             </div>     
             <div class="form-group">
@@ -61,10 +61,10 @@
               <div class="form-control">
                 <i class="fas fa-lock input-icon"></i>
                 <input type="password" id="password" name="password" class="initial" placeholder="password" aria-describedby="password-constraints">
-                <button type="button" class="toggle-password" role="switch" aria-pressed="false" aria-label="Show password"><i class="far fa-eye-slash"></i></button>
+                <button type="button" class="toggle-password" aria-pressed="false" aria-label="Show password"><i class="far fa-eye-slash"></i></button>
                 <i class="fas fa-exclamation-circle failure-icon"></i>
                 <i class="far fa-check-circle success-icon"></i>
-                <div class="feedback" id="password-constraints">Password must only contain letters, numbers, @, _ and -, and be between 8 - 20 characters long</div>
+                <div class="feedback" id="password-constraints">Password must only contain letters, numbers, at signs (@), underscores (_) and hyphens (-), and must be between 8 - 20 characters long</div>
               </div>
             </div>      
             <button class="btn submit" type="submit">Create Account</button>
